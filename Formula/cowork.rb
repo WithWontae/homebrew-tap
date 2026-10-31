@@ -5,21 +5,21 @@
 class Cowork < Formula
   desc "Claude Code·Codex 공통 규칙 설치와 실수 방지 Guard"
   homepage "https://github.com/WithWontae/CoworkAtlas"
-  version "0.8.3"
+  version "0.8.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.8.3/cowork_0.8.3_darwin_amd64.tar.gz"
-      sha256 "27b9fc20a8a943a3fab7e074c70e89bd6ab52e431c7999c8f45f527c1fd87d01"
+      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.8.4/cowork_0.8.4_darwin_amd64.tar.gz"
+      sha256 "816bbac53d8b07efe42ace7781c89d7a3b0cc29958d790d6ad1e28a354ecacc2"
 
       define_method(:install) do
         bin.install "cowork"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.8.3/cowork_0.8.3_darwin_arm64.tar.gz"
-      sha256 "77fb3ed81c2c3062954d48709011ffb6e122f399ce1d4037b004cd8cefa303c5"
+      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.8.4/cowork_0.8.4_darwin_arm64.tar.gz"
+      sha256 "37d1f2293cd0d7767c98fa5f166ab22f68f051b5e5c8283fafddbfabd55329d4"
 
       define_method(:install) do
         bin.install "cowork"
@@ -29,19 +29,29 @@ class Cowork < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.8.3/cowork_0.8.3_linux_amd64.tar.gz"
-      sha256 "1f94799bc0fb985577e8fd183ccfeb51155f503a0550bb844ffef9620dfab738"
+      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.8.4/cowork_0.8.4_linux_amd64.tar.gz"
+      sha256 "f61cdf70016a054483c0ab5c7bdc14ecc8f1717368436c798f334b31b9945081"
       define_method(:install) do
         bin.install "cowork"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.8.3/cowork_0.8.3_linux_arm64.tar.gz"
-      sha256 "4e88b7d19c187190db8aa58926637bee916693f1ae194f7bf0197a18825060e6"
+      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.8.4/cowork_0.8.4_linux_arm64.tar.gz"
+      sha256 "a247e938283a04730ec28226489929330d2341833f7bca3bd82e56e629f4d39b"
       define_method(:install) do
         bin.install "cowork"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      처음 설치했다면 대화형 설정과 설치를 실행하세요:
+        cowork init
+      업데이트했다면 바뀐 규칙·hook을 적용하세요:
+        cowork apply
+      First install: run `cowork init`. After an upgrade: run `cowork apply`.
+    EOS
   end
 
   test do
