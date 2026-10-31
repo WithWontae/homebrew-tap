@@ -5,21 +5,21 @@
 class Cowork < Formula
   desc "Claude Code·Codex 공통 규칙 설치와 실수 방지 Guard"
   homepage "https://github.com/WithWontae/CoworkAtlas"
-  version "0.9.0"
+  version "0.9.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.9.0/cowork_0.9.0_darwin_amd64.tar.gz"
-      sha256 "87075b9d2b7064c77b164ea1076a4cef02631f7e8273d8735da5eff8cb2a7c50"
+      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.9.1/cowork_0.9.1_darwin_amd64.tar.gz"
+      sha256 "277000b80fb27b9cafca0171b35a1c41b621864272ec1701d13271576085b517"
 
       define_method(:install) do
         bin.install "cowork"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.9.0/cowork_0.9.0_darwin_arm64.tar.gz"
-      sha256 "28f2d4c61092d32ea5f30e786905b39148ee8a43bf937502b27138375cf62a8f"
+      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.9.1/cowork_0.9.1_darwin_arm64.tar.gz"
+      sha256 "e1ff9b64e50422e852d9c4d6d522ae849e8c2ed4c71ce4b650b3bcfe159c494f"
 
       define_method(:install) do
         bin.install "cowork"
@@ -29,15 +29,15 @@ class Cowork < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.9.0/cowork_0.9.0_linux_amd64.tar.gz"
-      sha256 "63485a13f3c596721d886fc5f500b95f1ca8ab4e93e0b8c05af2207a766c927c"
+      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.9.1/cowork_0.9.1_linux_amd64.tar.gz"
+      sha256 "5b449e98950e49f79a4e1e42edf518eea48ff108bfa06f0fc74ae2d34bfbb5ae"
       define_method(:install) do
         bin.install "cowork"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.9.0/cowork_0.9.0_linux_arm64.tar.gz"
-      sha256 "5acbcbbf94e499ac5c35cb16fa0abd9257133b80ceebceb1008baac0eeeec064"
+      url "https://github.com/WithWontae/CoworkAtlas/releases/download/v0.9.1/cowork_0.9.1_linux_arm64.tar.gz"
+      sha256 "f1d344ef3530b6d938cfbcc5251da73d5f8816aa65d566cec29574bfe63854d8"
       define_method(:install) do
         bin.install "cowork"
       end
