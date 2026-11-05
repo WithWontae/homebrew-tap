@@ -5,21 +5,21 @@
 class Cowork < Formula
   desc "Claude Code·Codex 공통 규칙 설치와 실수 방지 Guard"
   homepage "https://github.com/WithWontae/cowork"
-  version "0.18.3"
+  version "0.18.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/WithWontae/cowork/releases/download/v0.18.3/cowork_0.18.3_darwin_amd64.tar.gz"
-      sha256 "5433556faa4bcfe8f3113dd5b0047ce95cc8d50276088be5f15a40d7aac83552"
+      url "https://github.com/WithWontae/cowork/releases/download/v0.18.4/cowork_0.18.4_darwin_amd64.tar.gz"
+      sha256 "7760fd3f01e008265ca1527a3b5e5a7cb3b201111828cd0f2bbbd0042c670dcc"
 
       define_method(:install) do
         bin.install "cowork"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/WithWontae/cowork/releases/download/v0.18.3/cowork_0.18.3_darwin_arm64.tar.gz"
-      sha256 "e1a3259f5ee56eceed4b2d5a9643d36888f39d6081e5a0ed8d21afad5188a397"
+      url "https://github.com/WithWontae/cowork/releases/download/v0.18.4/cowork_0.18.4_darwin_arm64.tar.gz"
+      sha256 "5065e162995fe921e24629b8972cdacf596260baef8c1dfe9e11b11bd84b8a84"
 
       define_method(:install) do
         bin.install "cowork"
@@ -29,15 +29,15 @@ class Cowork < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/WithWontae/cowork/releases/download/v0.18.3/cowork_0.18.3_linux_amd64.tar.gz"
-      sha256 "ebb3a030fefaa891ef4639f2d761ffb81168af7093e8aff4fc3eec218799b2fd"
+      url "https://github.com/WithWontae/cowork/releases/download/v0.18.4/cowork_0.18.4_linux_amd64.tar.gz"
+      sha256 "ff745d53b551ccd7d785d37c6726082b648420c827040736123fe6fdf2452176"
       define_method(:install) do
         bin.install "cowork"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/WithWontae/cowork/releases/download/v0.18.3/cowork_0.18.3_linux_arm64.tar.gz"
-      sha256 "0d3e2291d33d34eb740da132ea3128de88eeb3d205f548bb6ff846ca426b2930"
+      url "https://github.com/WithWontae/cowork/releases/download/v0.18.4/cowork_0.18.4_linux_arm64.tar.gz"
+      sha256 "6a44282da89812b400cb3ca25e7cb671c2ac12f2e8c4d0d63f67ad03fb882653"
       define_method(:install) do
         bin.install "cowork"
       end
